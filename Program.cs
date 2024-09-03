@@ -57,7 +57,8 @@ else if (resp == "2")
                 string[] dateSeparated = String.IsNullOrEmpty(line) ? [] : line.Split(',');
                 string[] arr = String.IsNullOrEmpty(dateSeparated[1]) ? [] : dateSeparated[1].Split('|');
                 // display array data
-                Console.WriteLine("Week of {0:}, {0:}, {0:}",dateSeparated[0]);
+                DateTime enteredDate = DateTime.Parse(dateSeparated[0]);
+                Console.WriteLine("Week of {0:MMMM}, {0:dd}, {0:yyyy}",enteredDate);
                 Console.WriteLine(" Su Mo Tu We Th Fr Sa");
                 Console.WriteLine(" -- -- -- -- -- -- --");
                 Console.WriteLine(" {0,2} {1,2} {2,2} {3,2} {4,2} {5,2} {6,2}",arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6]);
